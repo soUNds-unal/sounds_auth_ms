@@ -1,5 +1,3 @@
 module github.com/ccmorenov/microservicesounds
 
-require(
-
-)
+go 1.13
