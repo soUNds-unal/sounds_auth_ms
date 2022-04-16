@@ -1,3 +1,5 @@
+# github.com/dgrijalva/jwt-go v3.2.0+incompatible
+github.com/dgrijalva/jwt-go
 # github.com/go-stack/stack v1.8.0
 github.com/go-stack/stack
 # github.com/golang/snappy v0.0.1
