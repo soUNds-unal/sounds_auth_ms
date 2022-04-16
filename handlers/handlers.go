@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/ccmorenov/microservicesounds/middlew"
+	"github.com/ccmorenov/microservicesounds/routes"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
@@ -12,6 +14,8 @@ import (
 /* Manejadores*/
 func Manejadores() {
 	router := mux.NewRouter()
+
+	router.HandleFunc("/registro", middlew.ViewBD(routes.Registro)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
