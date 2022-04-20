@@ -2,6 +2,7 @@ package bd
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/ccmorenov/microservicesounds/models"
@@ -24,6 +25,7 @@ func InsertoRegistro(u models.Usuario) (string, bool, error) {
 	}
 
 	ObjID, _ := result.InsertedID.(primitive.ObjectID)
+	fmt.Printf(ObjID.Hex())
 	return ObjID.Hex(), true, nil
 
 }

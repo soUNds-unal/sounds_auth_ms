@@ -2,6 +2,7 @@ package routes
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 
 	"github.com/ccmorenov/microservicesounds/bd"
@@ -26,13 +27,14 @@ func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
 	tkn, err := jwt.ParseWithClaims(tk, claims, func(token *jwt.Token) (interface{}, error) {
 		return miClave, nil
 	})
-	if err != nil {
+	if err == nil {
 		_, encontrado, _ := bd.ViewExistUser(claims.Email)
 		if encontrado == true {
 			Email = claims.Email
 			IDUsuario = claims.ID.Hex()
+			fmt.Printf("Estoy aca: " + IDUsuario)
 		}
-		return claims, encontrado, IDUsuario, nil
+		return claims, true, IDUsuario, nil
 	}
 	if !tkn.Valid {
 		return claims, false, string(""), errors.New("token invalido")
