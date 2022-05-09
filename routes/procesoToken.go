@@ -2,7 +2,6 @@ package routes
 
 import (
 	"errors"
-	"fmt"
 	"strings"
 
 	"github.com/ccmorenov/microservicesounds/bd"
@@ -32,7 +31,6 @@ func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
 		if encontrado == true {
 			Email = claims.Email
 			IDUsuario = claims.ID.Hex()
-			fmt.Printf("Estoy aca: " + IDUsuario)
 		}
 		return claims, true, IDUsuario, nil
 	}
