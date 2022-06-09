@@ -1,1 +1,1 @@
-web: bin/microservicesounds
+web: bin/microservicesounds.exe
