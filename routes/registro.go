@@ -28,6 +28,11 @@ func Registro(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if len(t.Nombre) <=1 {
+		http.Error(w, "Debe Especificar un nombre de al menos 1 caracter ", 400)
+		return
+	}
+
 	_, encontrado, _ := bd.ViewExistUser(t.Email)
 
 	if encontrado == true {

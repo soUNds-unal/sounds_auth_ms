@@ -1,12 +1,10 @@
 package middlew
 
-import (
-	"net/http"
+//"net/http"
 
-	"github.com/ccmorenov/microservicesounds/routes"
-)
+//"github.com/ccmorenov/microservicesounds/routes"
 
-func ValidateJWT(next http.HandlerFunc) http.HandlerFunc {
+/* func ValidateJWT(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		_, _, _, err := routes.ProcesoToken(r.Header.Get("Authorization"))
 		if err != nil {
@@ -15,4 +13,4 @@ func ValidateJWT(next http.HandlerFunc) http.HandlerFunc {
 		}
 		next.ServeHTTP(w, r)
 	}
-}
+} */
