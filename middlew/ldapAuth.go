@@ -7,7 +7,7 @@ import (
 	"github.com/go-ldap/ldap"
 )
 
-var ldapURL string = "ldap://localhost:389"
+var ldapURL string = "10.32.13.215"
 var baseDN = "ou=sa,dc=sounds,dc=unal,dc=edu,dc=co"
 
 func auth(conn *ldap.Conn, email string, password string) error {
